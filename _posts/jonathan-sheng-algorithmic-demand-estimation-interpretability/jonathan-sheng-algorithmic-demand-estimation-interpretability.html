@@ -37,7 +37,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["jonathan-sheng-algorithmic-demand-estimation-interpretability_files/anchor-4.2.2/anchor.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/bowser-1.9.3/bowser.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/distill-2.2.21/template.v2.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/accumulated local rf-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/accumulated local xgb-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/ice rf-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/ice xgb-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/partial dependence rf-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/partial dependence xgb-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/unnamed-chunk-11-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/unnamed-chunk-12-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/unnamed-chunk-13-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/unnamed-chunk-5-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/jquery-1.11.3/jquery.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/popper-2.6.0/popper.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy-bundle.umd.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy-light-border.css","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy.css","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy.umd.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/webcomponents-2.0.0/webcomponents.js","Model_panel_cleaned.dta"]}
+  {"type":"character","attributes":{},"value":["BooST_fig1_png.png","BooST_fig2_png.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/anchor-4.2.2/anchor.min 2.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/anchor-4.2.2/anchor.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/bowser-1.9.3/bowser.min 2.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/bowser-1.9.3/bowser.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/distill-2.2.21/template.v2.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/accumulated local rf-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/accumulated local xgb-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/ice rf-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/ice xgb-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/partial dependence rf-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/partial dependence xgb-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/unnamed-chunk-11-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/unnamed-chunk-12-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/unnamed-chunk-13-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/figure-html5/unnamed-chunk-5-1.png","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/jquery-1.11.3/jquery.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/popper-2.6.0/popper.min 2.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/popper-2.6.0/popper.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy-bundle.umd.min 2.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy-bundle.umd.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy-light-border 2.css","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy-light-border.css","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy 2.css","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy.css","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy.umd.min 2.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/tippy-6.2.7/tippy.umd.min.js","jonathan-sheng-algorithmic-demand-estimation-interpretability_files/webcomponents-2.0.0/webcomponents.js","Model_panel_cleaned.dta"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1453,7 +1453,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Interpreting Algorithmic Models of Demand","description":"Analyzing Marginal Effects","authors":[{"author":"Jonathan Arnold","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Sheng Chao Ho","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-08T00:00:00.000+00:00","citationText":"Arnold & Ho, 2021"}
+{"title":"Interpreting Algorithmic Models of Demand","description":"Analyzing Marginal Effects","authors":[{"author":"Jonathan Arnold","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Sheng Chao Ho","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-08T00:00:00.000+08:00","citationText":"Arnold & Ho, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1469,7 +1469,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="dt=tag">Jonathan and Sheng</div>
 </div>
 <!--/radix_placeholder_categories-->
-<p>Analyzing Marginal Effects</p>
+<p><p>Analyzing Marginal Effects</p></p>
 </div>
 
 <div class="d-byline">
@@ -1742,6 +1742,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p>Keep in mind the shrunk scale for this plot relative to that of the Random Forest ICE curves. The XGBoost curves are relatively more inelastic compared to the Random Forest, but they do exhibit the desirable property of having fewer areas of positive elasticity.</p>
 <p>Overall, what we learn from the ICE plots is that there is considerable heterogeneity in the price coefficients implied by the algorithmic models, and estimates of elasticities from these models should account for this.</p>
+<h1 id="salvaging-algorithmic-demand-elasticities-with-boost">Salvaging Algorithmic Demand Elasticities with BooST</h1>
+<p>Finally, we make a second attempt to retrieve algorithmic-based price elasticities via numerical derivatives. Recall from the previous post that attempting to do so through trees yielded poor results due to the hard partitioning of the covariate space. Random Forest and Boosting performed better, but still exhibited significant shrinkage in the estimates. Therefore, here we boost smoothed trees using the ‘BooST’ package by Yuri et. al for our second attempt at sensible outputs. Because the speed of BooST is currently not ideal, we used only a subset of covariates available, and kept the number of trees low at 100 for this same reason. We also do not tune any parameters. We may try to remove these constraints in the final post.</p>
+<!-- A run of the BooST in this code chunk takes ~ 20mins. Therefore, eval=FALSE. Instead run the subsequent code chunk  -->
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<!-- The following is to accommodate poor speed of BooST. -->
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="BooST_fig1_png.png" width="100%" /></p>
+</div>
+<p>The results are sensible for the most part in both size and magnitude. Own-price elasticities are negative as they should be, with a significant fraction of them being greater than 1 in magnitude.</p>
+<p>Note that the above estimates ignore endogeneity concerns of the price. Here, we try to alleviate this concern by mixing BooST and the Logit model of demand. First, we BooST <span class="math inline">\(log(share)\)</span> on a single instrument <span class="math inline">\(z\)</span> and a set of covariates <span class="math inline">\(X\)</span>. Second, we BooST <span class="math inline">\(log(price)\)</span> on the same <span class="math inline">\((z,X)\)</span>. Then we retrieve an IV estimate of the price elasticities through the chain rule: <span class="math inline">\(\partial log(share)/\partial log(price) = \partial log(share)/\partial z \ /\ \partial log(price)/\partial z\)</span>, with every derivative being conditional on <span class="math inline">\(X\)</span>. We should recover sensible estimates if the instrument is valid in the usual sense.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<!-- The following is to accommodate poor speed of BooST. -->
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="BooST_fig2_png.png" width="100%" /></p>
+</div>
+<p>Here we plot the estimated price elasticities that lie within (-10,10). This comprises three quarters of all price elasticities. The majority of them are negative and large in magnitude. It seems like the companies with more luxurious offerings have smaller price elasticities while those with more economic offerings have larger price elasticities.</p>
+<p>A caveat is that a significant number of estimates (about a quarter) are far too large in size to be plausible. This might be due to the stability of numerical derivatives, in which case we would need smoother trees. There are a variety of other possible reasons, such as the validity of instruments. Note that in principle, we could have used multiple instruments and taken an average of the chain-rule outputs as our final estimate. However, we have kept it to a single instrument for now due to time constraints.</p>
 <h2 id="causal-machine-learning-methods">Causal Machine Learning Methods</h2>
 <h1 id="double-machine-learning">Double Machine Learning</h1>
 <p>Double Machine Learning (DML) offers a convenient solution to correct for regularization bias induced by algorithmic estimation of treatment effects in a partially linear setting. This is particularly convenient for us, as we are mostly interested in the coefficient on the price, and have no pressing need for interpretability in other dimensions. In addition, the Logit Model of demand can easily fit into the partially setting; by changing the functional form of the covariate dependency from the linear <span class="math inline">\(X \beta\)</span> to a general <span class="math inline">\(f(X)\)</span>, we easily obtain a partially linear specification of the demand model with the same properties.</p>
@@ -1804,16 +1825,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span class='va'>dml_plr_obj</span><span class='op'>$</span><span class='fu'>fit</span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>INFO  [04:54:04.039] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 2/5) 
-INFO  [04:54:18.372] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 3/5) 
-INFO  [04:54:32.401] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 4/5) 
-INFO  [04:54:46.514] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 5/5) 
-INFO  [04:54:59.978] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 1/5) 
-INFO  [04:55:15.119] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [04:55:29.112] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [04:55:43.914] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [04:55:58.095] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [04:56:12.639] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) </code></pre>
+<pre><code>INFO  [08:56:17.849] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 2/5) 
+INFO  [08:56:26.851] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 3/5) 
+INFO  [08:56:35.686] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 4/5) 
+INFO  [08:56:44.680] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 5/5) 
+INFO  [08:56:53.820] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 1/5) 
+INFO  [08:57:03.131] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [08:57:13.144] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [08:57:23.147] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [08:57:32.917] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [08:57:42.849] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>dml_plr_obj</span><span class='op'>)</span>
 </code></pre>
@@ -1844,7 +1865,7 @@ Apply cross-fitting: TRUE
 ------------------ Fit summary       ------------------
  [1] &quot;Estimates and significance testing of the effect of target variables&quot;
       Estimate. Std. Error t value Pr(&gt;|t|)    
-price -0.050520   0.004297  -11.76   &lt;2e-16 ***
+price -0.050205   0.004233  -11.86   &lt;2e-16 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -1875,16 +1896,16 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <span class='va'>dml_plr_obj_2</span><span class='op'>$</span><span class='fu'>fit</span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>INFO  [04:56:27.804] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 2/5) 
-INFO  [04:56:42.224] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 3/5) 
-INFO  [04:56:56.723] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 4/5) 
-INFO  [04:57:11.798] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 5/5) 
-INFO  [04:57:26.871] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 1/5) 
-INFO  [04:57:41.059] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [04:57:57.243] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [04:58:12.388] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [04:58:27.406] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [04:58:42.145] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) </code></pre>
+<pre><code>INFO  [08:57:53.486] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 2/5) 
+INFO  [08:58:03.378] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 3/5) 
+INFO  [08:58:12.951] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 4/5) 
+INFO  [08:58:22.794] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 5/5) 
+INFO  [08:58:32.100] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 1/5) 
+INFO  [08:58:41.791] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [08:58:52.643] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [08:59:03.182] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [08:59:13.866] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [08:59:24.315] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>dml_plr_obj_2</span><span class='op'>)</span>
 </code></pre>
@@ -1915,7 +1936,7 @@ Apply cross-fitting: TRUE
 ------------------ Fit summary       ------------------
  [1] &quot;Estimates and significance testing of the effect of target variables&quot;
       Estimate. Std. Error t value Pr(&gt;|t|)    
-price -0.049932   0.004175  -11.96   &lt;2e-16 ***
+price  -0.05063    0.00416  -12.17   &lt;2e-16 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -1942,92 +1963,92 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <span class='va'>dml_pliv_obj</span><span class='op'>$</span><span class='fu'>fit</span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
-<pre><code>INFO  [04:58:57.836] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 2/5) 
-INFO  [04:59:12.154] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 3/5) 
-INFO  [04:59:26.190] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 1/5) 
-INFO  [04:59:40.601] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 5/5) 
-INFO  [04:59:53.710] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 4/5) 
-INFO  [05:00:08.332] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 1/5) 
-INFO  [05:00:23.352] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 2/5) 
-INFO  [05:00:38.178] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 3/5) 
-INFO  [05:00:52.226] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 5/5) 
-INFO  [05:01:06.544] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 4/5) 
-INFO  [05:01:21.516] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:01:35.565] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:01:49.796] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:02:03.924] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:02:18.768] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:02:33.934] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:02:47.807] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:03:02.458] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:03:16.684] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:03:30.918] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:03:45.128] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:03:58.986] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:04:14.137] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:04:29.280] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:04:43.951] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:04:59.040] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:05:14.524] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:05:28.941] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:05:43.022] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:05:57.551] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:06:12.464] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:06:26.944] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:06:41.048] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:06:55.005] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:07:09.916] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:07:25.325] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:07:41.190] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:07:54.642] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:08:06.702] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:08:17.749] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:08:29.291] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:08:40.082] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:08:50.746] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:09:01.495] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:09:12.403] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:09:23.697] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:09:35.980] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:09:48.331] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:10:00.516] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:10:12.940] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:10:25.272] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:10:37.602] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:10:49.677] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:11:01.779] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:11:14.365] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:11:26.559] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:11:37.861] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:11:49.048] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:12:00.094] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:12:11.658] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:12:23.187] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:12:34.028] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:12:44.922] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:12:56.075] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:13:07.216] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:13:18.495] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:13:30.693] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:13:41.845] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:13:53.046] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:14:04.156] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:14:15.796] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:14:27.465] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:14:39.341] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:14:50.977] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:15:02.651] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:15:14.545] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:15:26.123] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:15:37.652] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:15:49.047] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:16:00.558] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:16:13.211] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
-INFO  [05:16:21.866] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
-INFO  [05:16:30.693] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
-INFO  [05:16:39.433] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
-INFO  [05:16:48.026] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
-INFO  [05:16:56.735] [mlr3]  Applying learner &#39;regr.lm&#39; on task &#39;nuis_r_tilde&#39; (iter 1/1) </code></pre>
+<pre><code>INFO  [08:59:35.018] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 2/5) 
+INFO  [08:59:44.084] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 3/5) 
+INFO  [08:59:53.236] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 1/5) 
+INFO  [09:00:02.252] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 5/5) 
+INFO  [09:00:11.180] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_g&#39; (iter 4/5) 
+INFO  [09:00:20.448] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 1/5) 
+INFO  [09:00:30.202] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 2/5) 
+INFO  [09:00:40.128] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 3/5) 
+INFO  [09:00:50.708] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 5/5) 
+INFO  [09:01:00.369] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_r&#39; (iter 4/5) 
+INFO  [09:01:10.546] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:01:19.694] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:01:28.338] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:01:36.971] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:01:45.748] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:01:54.909] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:02:03.721] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:02:12.265] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:02:21.456] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:02:30.264] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:02:39.215] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:02:48.483] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:02:57.196] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:03:06.080] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:03:14.623] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:03:24.123] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:03:33.121] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:03:41.796] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:03:50.856] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:03:59.470] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:04:08.312] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:04:17.680] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:04:26.620] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:04:35.392] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:04:44.304] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:04:53.613] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:05:02.124] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:05:10.535] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:05:19.403] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:05:27.976] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:05:36.472] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:05:45.201] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:05:54.113] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:06:02.734] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:06:11.444] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:06:20.948] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:06:32.144] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:06:46.612] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:06:58.163] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:07:09.217] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:07:20.504] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:07:31.341] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:07:42.263] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:07:53.268] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:08:04.485] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:08:15.981] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:08:26.145] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:08:36.213] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:08:46.590] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:08:56.564] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:09:06.686] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:09:16.381] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:09:25.909] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:09:35.239] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:09:44.661] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:09:54.334] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:10:04.270] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:10:14.039] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:10:24.036] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:10:34.090] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:10:43.947] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:10:54.026] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:11:03.825] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:11:13.435] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:11:23.480] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:11:33.246] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:11:43.226] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:11:53.428] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:12:03.379] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:12:13.066] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:12:23.475] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 3/5) 
+INFO  [09:12:30.506] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 5/5) 
+INFO  [09:12:37.438] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 1/5) 
+INFO  [09:12:44.464] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 2/5) 
+INFO  [09:12:51.813] [mlr3]  Applying learner &#39;regr.ranger&#39; on task &#39;nuis_m&#39; (iter 4/5) 
+INFO  [09:12:58.838] [mlr3]  Applying learner &#39;regr.lm&#39; on task &#39;nuis_r_tilde&#39; (iter 1/1) </code></pre>
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>dml_pliv_obj</span><span class='op'>)</span>
 </code></pre>
@@ -2059,7 +2080,7 @@ Apply cross-fitting: TRUE
 ------------------ Fit summary       ------------------
  [1] &quot;Estimates and significance testing of the effect of target variables&quot;
       Estimate. Std. Error t value Pr(&gt;|t|)  
-price  -0.04949    0.02426   -2.04   0.0414 *
+price  -0.04084    0.02355  -1.734   0.0829 .
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>

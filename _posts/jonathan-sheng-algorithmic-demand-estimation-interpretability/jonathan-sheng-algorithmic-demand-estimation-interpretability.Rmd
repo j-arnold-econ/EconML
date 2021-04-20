@@ -45,6 +45,7 @@ library(mlr3)
 library(mlr3learners)
 library(DescTools)
 library(grf)
+library(BooST)
 ```
 
 ## Introduction
@@ -334,6 +335,131 @@ plot(xgb_ice_effect)
 Keep in mind the shrunk scale for this plot relative to that of the Random Forest ICE curves. The XGBoost curves are relatively more inelastic compared to the Random Forest, but they do exhibit the desirable property of having fewer areas of positive elasticity. 
 
 Overall, what we learn from the ICE plots is that there is considerable heterogeneity in the price coefficients implied by the algorithmic models, and estimates of elasticities from these models should account for this.
+
+# Salvaging Algorithmic Demand Elasticities with BooST
+
+Finally, we make a second attempt to retrieve algorithmic-based price elasticities via numerical derivatives. Recall from the previous post that attempting to do so through trees yielded poor results due to the hard partitioning of the covariate space. Random Forest and Boosting performed better, but still exhibited significant shrinkage in the estimates. Therefore, here we boost smoothed trees using the 'BooST' package by Yuri et. al for our second attempt at sensible outputs. Because the speed of BooST is currently not ideal, we used only a subset of covariates available, and kept the number of trees low at 100 for this same reason. We also do not tune any parameters. We may try to remove these constraints in the final post. 
+
+<!-- A run of the BooST in this code chunk takes ~ 20mins. Therefore, eval=FALSE. Instead run the subsequent code chunk  -->
+```{r BooSTing, eval=FALSE}
+df_BooST = df %>% 
+  group_by(Year) %>% 
+  mutate(outside_share=log(1-sum(exp(share)))) %>%
+  #mutate(share=share-outside_share) %>%
+  ungroup #%>%
+  #select(-outside_share)
+
+Xfactor = model.matrix( ~ class + company, data=df_BooST)
+pX = df %>% 
+  select(price, log_car_size, log_mpg_city, 
+         log_dpm_city, log_engine_hp, log_hp_to_weight, 
+         outside_share) %>% 
+  as.matrix %>% 
+  cbind(Xfactor)
+
+Y = df %>% pull(share)
+
+BooSTmodel = BooST(pX, Y, v = 0.2, M = 100, display = TRUE)
+
+BooSTelas = estimate_derivatives(BooSTmodel,pX,1)
+
+df_BooST1 = df_BooST %>%  
+  mutate(elast = BooSTelas) %>% 
+  group_by(company, brand, model) %>%
+  summarize(price=median(price),
+            class=mode(class),elast=median(elast),n_obs=n())
+
+elasPlot =
+  df_BooST1 %>%
+  ggplot(aes(x=company,y=elast)) + 
+  geom_boxplot()  + 
+  ylim(-3.5,1.5) + coord_flip()
+
+elasPlot
+```
+
+<!-- The following is to accommodate poor speed of BooST. -->
+```{r plot from BooSTing, echo=FALSE, out.width='100%'}
+knitr::include_graphics('./BooST_fig1_png.png')
+```
+
+The results are sensible for the most part in both size and magnitude. Own-price elasticities are negative as they should be, with a significant fraction of them being greater than 1 in magnitude.
+
+Note that the above estimates ignore endogeneity concerns of the price. Here, we try to alleviate this concern by mixing BooST and the Logit model of demand. First, we BooST $log(share)$ on a single instrument $z$ and a set of covariates $X$. Second, we BooST $log(price)$ on the same $(z,X)$. Then we retrieve an IV estimate of the price elasticities through the chain rule: $\partial log(share)/\partial log(price) = \partial log(share)/\partial z \ /\ \partial log(price)/\partial z$, with every derivative being conditional on $X$. We should recover sensible estimates if the instrument is valid in the usual sense.
+
+```{r BooSTing with instrument, eval=FALSE}
+
+blp_instruments <- 
+  c("log_mpg_city","log_mpg_hwy","log_engine_hp",
+    "log_hp_to_weight","log_car_size","log_dpm_city","log_dpm_hwy")
+
+df_instruments <- df %>% 
+  #mutate(price = exp(price)/1000) %>% 
+  group_by(Year) %>% 
+  mutate(outside_share=log(1-sum(exp(share)))) %>%
+  #mutate(share=share-outside_share) %>%
+  ungroup %>%
+  #select(-outside_share) %>% 
+  group_by(Year,company) %>%
+  mutate(across(all_of(blp_instruments), ~sum(.x)-.x,.names="BLP2_{.col}")) %>%
+  ungroup %>%
+  group_by(Year) %>%
+  mutate(BLP3_log_car_size = sum(log_car_size) - log_car_size - BLP2_log_car_size,
+         BLP3_log_mpg_city = sum(log_mpg_city) - log_mpg_city - BLP2_log_mpg_city,
+         BLP3_log_mpg_hwy = sum(log_mpg_hwy) - log_mpg_hwy - BLP2_log_mpg_hwy,
+         BLP3_log_dpm_city = sum(log_dpm_city) - log_dpm_city - BLP2_log_dpm_city,
+         BLP3_log_dpm_hwy = sum(log_dpm_hwy) - log_dpm_hwy - BLP2_log_dpm_hwy,
+         BLP3_log_engine_hp = sum(log_engine_hp) - log_engine_hp - BLP2_log_engine_hp,
+         BLP3_log_hp_to_weight = sum(log_hp_to_weight) - log_hp_to_weight - BLP2_log_hp_to_weight
+  ) %>% ungroup
+
+
+df_BooST_instrument = df_instruments
+
+Xfactor = model.matrix( ~ class + company, data=df_BooST_instrument)
+
+#Using BLP2_log_engine_hp as instrument. Tried the Hausman instrument to get results that can be compared with the GRF below, but numerical derivatives wrt this was all zero, for reasons still unknown to me.
+zX = df_BooST_instrument %>% 
+  select(BLP2_log_engine_hp,
+         log_car_size, log_mpg_city, 
+         log_dpm_city, log_engine_hp, log_hp_to_weight,
+         outside_share) %>% 
+  as.matrix %>% 
+  cbind(Xfactor)
+
+Y = df %>% pull(share)
+BooSTmodel_instrument_stage2 = BooST(zX, Y, v = 0.2, M = 100, display = TRUE)
+BooSTelas_instrument_stage2 = estimate_derivatives(BooSTmodel_instrument_stage2,zX,1)
+
+P = df %>% pull(price)
+BooSTmodel_instrument_stage1 = BooST(zX, P, v = 0.2, M = 100, display = TRUE)
+BooSTelas_instrument_stage1 = estimate_derivatives(BooSTmodel_instrument_stage1,zX,1)
+
+BooSTelas_instrument = BooSTelas_instrument_stage2 / BooSTelas_instrument_stage1
+
+df_BooST_instrument1 = df_BooST_instrument %>%  
+  mutate(elast = BooSTelas_instrument) %>% 
+  group_by(company, brand, model) %>%
+  summarize(price=median(price),
+            class=mode(class),elast=median(elast),n_obs=n())
+
+elasPlot_instrument =
+  df_BooST_instrument1 %>%
+  ggplot(aes(x=company,y=elast)) + 
+  geom_boxplot()  + 
+  ylim(-10,10) + coord_flip()
+
+elasPlot_instrument
+```
+
+<!-- The following is to accommodate poor speed of BooST. -->
+```{r plot from BooSTing with instrument, echo=FALSE, out.width='100%'}
+knitr::include_graphics('./BooST_fig2_png.png')
+```
+
+Here we plot the estimated price elasticities that lie within (-10,10). This comprises three quarters of all price elasticities. The majority of them are negative and large in magnitude. It seems like the companies with more luxurious offerings have smaller price elasticities while those with more economic offerings have larger price elasticities. 
+
+A caveat is that a significant number of estimates (about a quarter) are far too large in size to be plausible. This might be due to the stability of numerical derivatives, in which case we would need smoother trees. There are a variety of other possible reasons, such as the validity of instruments. Note that in principle, we could have used multiple instruments and taken an average of the chain-rule outputs as our final estimate. However, we have kept it to a single instrument for now due to time constraints.  
 
 ## Causal Machine Learning Methods
 
